@@ -124,7 +124,6 @@ function buildGaugeChart(wfreq) {
   console.log('Y angle: ' + y);
   console.log('DEGREES: ' + degrees);
   var path1 = (degrees < 45 || degrees > 135) ? 'M -0.0 -0.025 L 0.0 0.025 L ' : 'M -0.025 -0.0 L 0.025 0.0 L ';
-  console.log("PATH 1: " + path1)
   var mainPath = path1,
       pathX = String(x),
       space = ' ',
@@ -151,22 +150,12 @@ function buildGaugeChart(wfreq) {
       textposition:'inside',
       marker:
       {
-        colors:[
-          "rgba(0, 105, 11, .5)",
-          "rgba(10, 120, 22, .5)",
-          "rgba(14, 127, 0, .5)",
-          "rgba(110, 154, 22, .5)",
-          "rgba(170, 202, 42, .5)",
-          "rgba(202, 209, 95, .5)",
-          "rgba(210, 206, 145, .5)",
-          "rgba(232, 226, 202, .5)",
-          "rgba(240, 230, 215, .5)",
-          "rgba(255, 255, 255, 0)"
+        colors:["red","orange","yellow","green","blue","skyblue","purple","violet","pink","white"
         ]
       },
       labels: ["8-9", "7-8", "6-7", "5-6", "4-5", "3-4", "2-3", "1-2", "0-1", ""],
-      hoverinfo: 'label',
-      hole: .5,
+      hoverinfo: 'text',
+      hole: .30,
       type: 'pie',
       showlegend: false
     }
@@ -182,9 +171,8 @@ function buildGaugeChart(wfreq) {
         }
       }
     ],
-    title: "<b>Belly Button Washing Frequency</b> <br> Scrubs per Week",
-    height: 400,
-    width: 400,
+    title: "<b>Frequency of Belly Button Washes</b> <br>scrubs per week",
+    height: 500, width: 700,
     xaxis: {
       zeroline:false, showticklabels:false,
       showgrid: false, range: [-1, 1]
